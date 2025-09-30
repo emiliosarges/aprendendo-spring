@@ -25,7 +25,7 @@ public class UsuarioService {
 
     public void emailExiste(String email) {
         try {
-            boolean existe = vericarEmailExistente(email);
+            boolean existe = verificarEmailExistente(email);
             if(existe){
                 throw new ConflictException("Email já cadastrado " + email);
             }
@@ -34,7 +34,7 @@ public class UsuarioService {
         }
     }
 
-    public boolean vericarEmailExistente(String email) {
+    public boolean verificarEmailExistente(String email) {
         return  usuarioRepository.existsByEmail(email);
     }
 }
