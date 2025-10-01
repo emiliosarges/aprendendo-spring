@@ -3,6 +3,7 @@ package com.emilio.aprendendo.spring.infrastructure.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.boot.autoconfigure.web.WebProperties;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements  UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
